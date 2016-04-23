@@ -3,6 +3,7 @@
 .idea
 .classpath
 .project
-target
-.settings
+target/
+.settings/
 .class
+test-output/
