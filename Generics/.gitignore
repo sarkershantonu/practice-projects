@@ -6,4 +6,5 @@
 target/
 .settings/
 .class
-test-output/
+bin/
+obj/
