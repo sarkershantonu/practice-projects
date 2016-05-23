@@ -10,6 +10,10 @@ A compile time annotation system (annotation + pre processor) which helps to min
 
  val
  Finally! Hassle-free final local variables.
+ Deceleration area : inside method as local variable. Mainly local variable + foreach loop. Initilization expression needed.
+
+
+
  @NonNull
  or: How I learned to stop worrying and love the NullPointerException.
  @Cleanup
