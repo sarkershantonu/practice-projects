@@ -1,14 +1,14 @@
 package examples;
 
-import lombok.Value;
+import lombok.Builder;
+import lombok.Singular;
 
 /**
  * Created by shantonu on 5/24/16.
  */
-@Value(staticConstructor = "name")
-public class Entity {
+@Builder
+public class Model {
     private String name;
     private String id;
     private String address;
-
 }
