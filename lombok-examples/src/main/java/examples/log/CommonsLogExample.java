@@ -12,7 +12,7 @@ public class CommonsLogExample {
         log.info("This is info logging using "+ log.getClass());
         log.trace("This is trace logging using "+ log.getClass());
         log.error("This is error logging using "+ log.getClass());
-        log.fatal("This is fital logging using "+ log.getClass());
+        log.fatal("This is fatal logging using "+ log.getClass());
         log.warn("This is warn logging using "+ log.getClass());
     }
 

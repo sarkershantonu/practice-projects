@@ -2,6 +2,7 @@ package examples;
 
 import examples.log.CommonsLogExample;
 import examples.log.JavaLogApiExample;
+import examples.log.Log4j2Example;
 import examples.log.Log4jExample;
 
 /**
@@ -11,6 +12,7 @@ public class Run {
     public static void main(String... args){
         //CommonsLogExample.log();
         //JavaLogApiExample.log();
-        Log4jExample.log();
+        //Log4jExample.log();
+        Log4j2Example.log();
     }
 }
