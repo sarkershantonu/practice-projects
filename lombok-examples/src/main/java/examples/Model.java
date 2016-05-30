@@ -11,4 +11,5 @@ public class Model {
     private String name;
     private String id;
     private String address;
+
 }

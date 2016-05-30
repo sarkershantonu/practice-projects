@@ -10,6 +10,7 @@ import java.util.logging.Level;
 /**
  * Created by shantonu on 5/25/16.
  */
+
 @Slf4j
 public class LoggingEx {
     public void slf4j() {
@@ -56,3 +57,4 @@ class LoggingEx5 {
 
     }
 }
+
