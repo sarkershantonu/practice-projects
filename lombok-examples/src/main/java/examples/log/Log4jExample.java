@@ -8,7 +8,13 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 public class Log4jExample {
-    public void log4j() {
+    public static void log() {
+        log.debug("This is debug logging using "+ log.getClass());
+        log.info("This is info logging using "+ log.getClass());
+        log.trace("This is trace logging using "+ log.getClass());
+        log.error("This is error logging using "+ log.getClass());
+        log.fatal("This is fital logging using "+ log.getClass());
+        log.warn("This is warn logging using "+ log.getClass());
 
 
     }

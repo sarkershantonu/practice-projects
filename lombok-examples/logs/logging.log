@@ -1,0 +1,12 @@
+2016-05-31 01:26:39 INFO  CommonsLogExample:12 - This is info logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 01:26:39 ERROR CommonsLogExample:14 - This is error logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 01:26:39 FATAL CommonsLogExample:15 - This is fital logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 01:26:39 WARN  CommonsLogExample:16 - This is warn logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 01:27:44 INFO  CommonsLogExample:12 - This is info logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 01:27:44 ERROR CommonsLogExample:14 - This is error logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 01:27:44 FATAL CommonsLogExample:15 - This is fital logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 01:27:44 WARN  CommonsLogExample:16 - This is warn logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 01:36:47 INFO  Log4jExample:13 - This is info logging using class org.apache.log4j.Logger
+2016-05-31 01:36:47 ERROR Log4jExample:15 - This is error logging using class org.apache.log4j.Logger
+2016-05-31 01:36:47 FATAL Log4jExample:16 - This is fital logging using class org.apache.log4j.Logger
+2016-05-31 01:36:47 WARN  Log4jExample:17 - This is warn logging using class org.apache.log4j.Logger
