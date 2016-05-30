@@ -12,7 +12,7 @@ import java.util.logging.Level;
  */
 
 @Slf4j
-public class LoggingEx {
+public class Slf4jExample {
     public void slf4j() {
 
     }

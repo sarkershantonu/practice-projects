@@ -7,7 +7,7 @@ import lombok.extern.log4j.Log4j;
  */
 
 @Log4j
-class LoggingEx4 {
+public class Log4jExample {
     public void log4j() {
 
 
