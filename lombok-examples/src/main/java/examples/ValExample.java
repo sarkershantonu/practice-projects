@@ -7,21 +7,20 @@ import java.util.Hashtable;
 /**
  * Created by shantonu on 5/18/16.
  */
-public class ValEx {
+
+public class ValExample {
+    val items;
+    public ValExample(){
+    }
     public void  aMethod() {
         val store = new Hashtable<String, String>();
-
         store.put("one", new String("Shantonu"));
-
         val func = store.get("one");
         System.out.println(func.toLowerCase());
-
         store.put("two", "Andrii");
         store.put("three", "Oleks");
-
         for(val v: store.entrySet()){
             System.out.println("KEY =" +v.getKey()+", VAL = "+ v.getValue());
         }
-
     }
 }
