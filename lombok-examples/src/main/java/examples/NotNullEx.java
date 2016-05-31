@@ -12,12 +12,11 @@ public class NotNullEx {
     private String id;
     private String address;
 
-    public NotNullEx(String id){
+    public NotNullEx( @NonNull String id){
         //this throws null pointer exception if id is null
+        this.id=id;
     }
-
-    public @NonNull String doSomeWork(){
-
-        return null;
+    public static void main(String... args){
+        new NotNullEx(null);
     }
 }
