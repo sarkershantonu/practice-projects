@@ -10,3 +10,9 @@
 2016-05-31 01:36:47 ERROR Log4jExample:15 - This is error logging using class org.apache.log4j.Logger
 2016-05-31 01:36:47 FATAL Log4jExample:16 - This is fital logging using class org.apache.log4j.Logger
 2016-05-31 01:36:47 WARN  Log4jExample:17 - This is warn logging using class org.apache.log4j.Logger
+2016-05-31 01:57:26 INFO  XSlf4jExample:12 - This is info logging using class org.slf4j.ext.XLogger
+2016-05-31 01:57:26 ERROR XSlf4jExample:14 - This is error logging using class org.slf4j.ext.XLogger
+2016-05-31 01:57:26 WARN  XSlf4jExample:15 - This is warn logging using class org.slf4j.ext.XLogger
+2016-05-31 02:00:26 INFO  XSlf4jExample:12 - This is info logging using class org.slf4j.ext.XLogger
+2016-05-31 02:00:26 ERROR XSlf4jExample:14 - This is error logging using class org.slf4j.ext.XLogger
+2016-05-31 02:00:26 WARN  XSlf4jExample:15 - This is warn logging using class org.slf4j.ext.XLogger

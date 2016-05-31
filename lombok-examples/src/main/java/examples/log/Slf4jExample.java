@@ -13,7 +13,13 @@ import java.util.logging.Level;
 
 @Slf4j
 public class Slf4jExample {
-    public void slf4j() {
+    public static void log() {
+        log.debug("This is debug logging using "+ log.getClass());
+        log.info("This is info logging using "+ log.getClass());
+        log.trace("This is trace logging using "+ log.getClass());
+        log.error("This is error logging using "+ log.getClass());
+
+        log.warn("This is warn logging using "+ log.getClass());
 
     }
 

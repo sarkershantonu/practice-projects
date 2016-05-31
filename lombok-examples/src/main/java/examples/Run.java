@@ -1,9 +1,6 @@
 package examples;
 
-import examples.log.CommonsLogExample;
-import examples.log.JavaLogApiExample;
-import examples.log.Log4j2Example;
-import examples.log.Log4jExample;
+import examples.log.*;
 
 /**
  * Created by shantonu on 5/31/16.
@@ -13,6 +10,8 @@ public class Run {
         //CommonsLogExample.log();
         //JavaLogApiExample.log();
         //Log4jExample.log();
-        Log4j2Example.log();
+        //Log4j2Example.log();
+        XSlf4jExample.log();
+        
     }
 }

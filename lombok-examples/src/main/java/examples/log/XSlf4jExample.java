@@ -7,7 +7,13 @@ import lombok.extern.slf4j.XSlf4j;
  */
 @XSlf4j
 public class XSlf4jExample {
-    public void xslf4j() {
+    public static void log() {
+
+        log.debug("This is debug logging using "+ log.getClass());
+        log.info("This is info logging using "+ log.getClass());
+        log.trace("This is trace logging using "+ log.getClass());
+        log.error("This is error logging using "+ log.getClass());
+        log.warn("This is warn logging using "+ log.getClass());
 
     }
 }
