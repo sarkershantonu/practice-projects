@@ -7,11 +7,16 @@ import examples.log.*;
  */
 public class Run {
     public static void main(String... args){
-        //CommonsLogExample.log();
-        //JavaLogApiExample.log();
-        //Log4jExample.log();
-        //Log4j2Example.log();
+       logExperiments();
+    }
+
+    public static void logExperiments(){
+        AllLoggers.log();/*
+        CommonsLogExample.log();
+        JavaLogApiExample.log();
+        Log4jExample.log();
+        Log4j2Example.log();
         XSlf4jExample.log();
-        
+        Slf4jExample.log();*/
     }
 }
