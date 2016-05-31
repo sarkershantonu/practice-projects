@@ -11,12 +11,12 @@ public class Run {
     }
 
     public static void logExperiments(){
-        AllLoggers.log();/*
+        //AllLoggers.log();/*
         CommonsLogExample.log();
         JavaLogApiExample.log();
         Log4jExample.log();
         Log4j2Example.log();
         XSlf4jExample.log();
-        Slf4jExample.log();*/
+        Slf4jExample.log();
     }
 }

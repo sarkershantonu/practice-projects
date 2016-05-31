@@ -5,7 +5,7 @@ import lombok.extern.slf4j.XSlf4j;
 /**
  * Created by shantonu on 5/31/16.
  */
-@XSlf4j
+@XSlf4j(topic = "XSlf4j topic")
 public class XSlf4jExample {
     public static void log() {
 

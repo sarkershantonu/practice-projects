@@ -5,7 +5,7 @@ import lombok.extern.apachecommons.CommonsLog;
 /**
  * Created by shantonu on 5/31/16.
  */
-@CommonsLog
+@CommonsLog(topic = "CommonsLog topic")
 public class CommonsLogExample {
     public static void log() {
         log.debug("This is debug logging using "+ log.getClass());

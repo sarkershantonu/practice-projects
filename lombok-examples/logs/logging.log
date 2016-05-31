@@ -101,3 +101,35 @@
 2016-05-31 02:10:53 INFO  AllLoggers:26 - This is info logging using class org.slf4j.ext.XLogger
 2016-05-31 02:10:53 ERROR AllLoggers:28 - This is error logging using class org.slf4j.ext.XLogger
 2016-05-31 02:10:53 WARN  AllLoggers:29 - This is warn logging using class org.slf4j.ext.XLogger
+2016-05-31 02:25:10 INFO  Hi:12 - This is info logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 02:25:10 ERROR Hi:14 - This is error logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 02:25:10 FATAL Hi:15 - This is fatal logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 02:25:10 WARN  Hi:16 - This is warn logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 02:27:41 INFO  CommonsLog CommonsLog:12 - This is info logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 02:27:41 ERROR CommonsLog CommonsLog:14 - This is error logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 02:27:41 FATAL CommonsLog CommonsLog:15 - This is fatal logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 02:27:41 WARN  CommonsLog CommonsLog:16 - This is warn logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 02:27:41 INFO  log4j topic:13 - This is info logging using class org.apache.log4j.Logger
+2016-05-31 02:27:41 ERROR log4j topic:15 - This is error logging using class org.apache.log4j.Logger
+2016-05-31 02:27:41 FATAL log4j topic:16 - This is fatal logging using class org.apache.log4j.Logger
+2016-05-31 02:27:41 WARN  log4j topic:17 - This is warn logging using class org.apache.log4j.Logger
+2016-05-31 02:27:41 INFO  XSlf4j topic:13 - This is info logging using class org.slf4j.ext.XLogger
+2016-05-31 02:27:41 ERROR XSlf4j topic:15 - This is error logging using class org.slf4j.ext.XLogger
+2016-05-31 02:27:41 WARN  XSlf4j topic:16 - This is warn logging using class org.slf4j.ext.XLogger
+2016-05-31 02:27:41 INFO  Slf4j topic:18 - This is info logging using class org.slf4j.impl.Log4jLoggerAdapter
+2016-05-31 02:27:41 ERROR Slf4j topic:20 - This is error logging using class org.slf4j.impl.Log4jLoggerAdapter
+2016-05-31 02:27:41 WARN  Slf4j topic:22 - This is warn logging using class org.slf4j.impl.Log4jLoggerAdapter
+2016-05-31 02:28:44 INFO  CommonsLog topic:12 - This is info logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 02:28:44 ERROR CommonsLog topic:14 - This is error logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 02:28:44 FATAL CommonsLog topic:15 - This is fatal logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 02:28:44 WARN  CommonsLog topic:16 - This is warn logging using class org.apache.commons.logging.impl.Log4JLogger
+2016-05-31 02:28:44 INFO  log4j topic:13 - This is info logging using class org.apache.log4j.Logger
+2016-05-31 02:28:44 ERROR log4j topic:15 - This is error logging using class org.apache.log4j.Logger
+2016-05-31 02:28:44 FATAL log4j topic:16 - This is fatal logging using class org.apache.log4j.Logger
+2016-05-31 02:28:44 WARN  log4j topic:17 - This is warn logging using class org.apache.log4j.Logger
+2016-05-31 02:28:44 INFO  XSlf4j topic:13 - This is info logging using class org.slf4j.ext.XLogger
+2016-05-31 02:28:44 ERROR XSlf4j topic:15 - This is error logging using class org.slf4j.ext.XLogger
+2016-05-31 02:28:44 WARN  XSlf4j topic:16 - This is warn logging using class org.slf4j.ext.XLogger
+2016-05-31 02:28:44 INFO  Slf4j topic:18 - This is info logging using class org.slf4j.impl.Log4jLoggerAdapter
+2016-05-31 02:28:44 ERROR Slf4j topic:20 - This is error logging using class org.slf4j.impl.Log4jLoggerAdapter
+2016-05-31 02:28:44 WARN  Slf4j topic:22 - This is warn logging using class org.slf4j.impl.Log4jLoggerAdapter

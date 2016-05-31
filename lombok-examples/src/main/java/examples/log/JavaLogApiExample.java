@@ -8,7 +8,7 @@ import java.util.logging.Level;
 /**
  * Created by shantonu on 5/31/16.
  */
-@Log
+@Log(topic = "JDK topic")
 public class JavaLogApiExample {
     public static void log() {
 

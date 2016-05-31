@@ -6,7 +6,7 @@ import lombok.extern.log4j.Log4j;
  * Created by shantonu on 5/31/16.
  */
 
-@Log4j
+@Log4j(topic = "log4j topic")
 public class Log4jExample {
     public static void log() {
         log.debug("This is debug logging using "+ log.getClass());

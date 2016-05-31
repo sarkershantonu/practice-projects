@@ -11,7 +11,7 @@ import java.util.logging.Level;
  * Created by shantonu on 5/25/16.
  */
 
-@Slf4j
+@Slf4j(topic = "Slf4j topic")
 public class Slf4jExample {
     public static void log() {
         log.debug("This is debug logging using "+ log.getClass());

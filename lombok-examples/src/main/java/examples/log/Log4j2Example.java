@@ -5,7 +5,7 @@ import lombok.extern.log4j.Log4j2;
 /**
  * Created by shantonu on 5/31/16.
  */
-@Log4j2
+@Log4j2(topic = "log4j2 topic")
 public class Log4j2Example {
 
     public static void log() {
