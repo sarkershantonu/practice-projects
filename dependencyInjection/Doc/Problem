@@ -1,3 +1,6 @@
 This document describes the problem and the solve.
 
 main target => manually implement IOC
+
+primary idea => use factory to create product which will be used by cleints with interface.
+Providing similar behavior like @Autowired in spring
