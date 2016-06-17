@@ -1,6 +1,7 @@
 package client;
 
 import annotation.InjectMeHere;
+import annotation.processor.InjectMeProcessor;
 import products.Service;
 
 /**
@@ -8,10 +9,14 @@ import products.Service;
  */
 public class Application {
 
+    static {
+        InjectMeProcessor.inject(Application.class);
+    }
     @InjectMeHere
-    Service aService;
+    public String aService;
 
     public static void main(String... args) {
-        System.out.println("Injecting XML" + new Application().aService.serve());
+       // System.out.println("Injecting XML" + new Application().aService.serve());
+        System.out.println("Injecting string >> "+new Application().aService);
     }
 }

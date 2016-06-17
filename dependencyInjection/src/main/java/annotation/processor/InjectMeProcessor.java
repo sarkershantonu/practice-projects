@@ -1,5 +1,6 @@
 package annotation.processor;
 
+import annotation.InjectMeHere;
 import sun.reflect.annotation.AnnotationType;
 
 import java.lang.annotation.Annotation;
@@ -16,10 +17,20 @@ public class InjectMeProcessor {
     {
         String packageinfo = aClass.getPackage().getName();
         for(Field field : aClass.getDeclaredFields()) {
-            for (Annotation type : field.getDeclaredAnnotations())
-            {
-                
+            field.setAccessible(true);
+            String value = "I am assigning a value";
+            System.out.println("Value to assign = "+value);
+            if(field.isAnnotationPresent(InjectMeHere.class)){
+                try {
+                    field.set(null, value);
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                    System.out.println("cant do");
+                }
             }
+
         }
     }
+
+
 }
