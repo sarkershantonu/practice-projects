@@ -22,14 +22,25 @@ public class InjectMeProcessor {
             System.out.println("Value to assign = "+value);
             if(field.isAnnotationPresent(InjectMeHere.class)){
                 try {
+                    value+=" TYPE >> "+field.getType().getName();
                     field.set(null, value);
+
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                     System.out.println("cant do");
                 }
             }
-
+            field.setAccessible(false);
         }
+    }
+
+    public static void inject(Object obj){
+
+    }
+
+    public static void run(Class<?> aClass){
+        inject(aClass);
+
     }
 
 

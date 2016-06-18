@@ -13,7 +13,7 @@ public class Application {
         InjectMeProcessor.inject(Application.class);
     }
     @InjectMeHere
-    public String aService;
+    private static String aService;
 
     public static void main(String... args) {
        // System.out.println("Injecting XML" + new Application().aService.serve());
