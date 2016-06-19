@@ -14,6 +14,7 @@ public class InjectMeProcessor {
 
     public static void inject(Class<?> aClass)
     {
+        Object o = Factory.getObject(aClass);
         String packageinfo = aClass.getPackage().getName();
         for(Field field : aClass.getDeclaredFields()) {
             field.setAccessible(true);
@@ -27,9 +28,6 @@ public class InjectMeProcessor {
                         //refactored from field.set(null, value);
                         RefUtils.setStaticField(aClass.getName(),field.getName(),value);
 
-
-
-
                     } catch (IllegalAccessException e) {
                         e.printStackTrace();
                         System.out.println("cant do");
@@ -38,15 +36,12 @@ public class InjectMeProcessor {
                     } catch (NoSuchFieldException e) {
                         e.printStackTrace();
                     }
-                }// non static field processing
+                }
                 else{
                     try {
-                        Object old = Class.forName(aClass.getName());
+                        Object old = o;
                         System.out.println(aClass.getName()+" OLD "+old.toString());
-
-                        Object oldVal = RefUtils.getField(old,field.getName());
-                        System.out.println("Old Val"+oldVal);
-                        field.set(oldVal,"lol");
+                        field.set(old,"lol");
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -56,7 +51,27 @@ public class InjectMeProcessor {
         }
     }
 
-    public static void inject(Object obj){
+    public static void inject(Class<?> aClass,Object obj){
+        inject(aClass);
+
+        for(Field field : obj.getClass().getDeclaredFields()){
+            if (field.isAnnotationPresent(InjectMeHere.class)) {
+                System.out.println("name => "+field.getName());
+                try {
+                    if(!Modifier.isStatic(field.getModifiers())){
+                        System.out.println("Non static name => "+field.getName());
+                        RefUtils.setField(obj,field.getName(),"SettingVAL");
+                    }
+
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (NoSuchFieldException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
 
     }
 
