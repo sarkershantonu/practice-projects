@@ -15,8 +15,12 @@ public class Application {
     @InjectMeHere
     private static String aService;
 
+    //@InjectMeHere
+    private String service;
+
     public static void main(String... args) {
        // System.out.println("Injecting XML" + new Application().aService.serve());
-        System.out.println("Injecting string >> "+new Application().aService);
+        System.out.println("String in static member >> "+Application.aService);
+        System.out.println("String in regular member >> "+new Application().service);
     }
 }

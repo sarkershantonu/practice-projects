@@ -1,9 +1,7 @@
 package annotation.processor;
 
 import annotation.InjectMeHere;
-import sun.reflect.annotation.AnnotationType;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
@@ -19,17 +17,39 @@ public class InjectMeProcessor {
         String packageinfo = aClass.getPackage().getName();
         for(Field field : aClass.getDeclaredFields()) {
             field.setAccessible(true);
-            String value = "I am assigning a value";
-            System.out.println("Value to assign = "+value);
-            if(Modifier.isStatic(field.getModifiers())&&field.isAnnotationPresent(InjectMeHere.class)){
-                try {
+            String value = "Shantonu Example : ";
+            System.out.println("field = "+field.getName());
+            if(field.isAnnotationPresent(InjectMeHere.class)) {
+                if (Modifier.isStatic(field.getModifiers())) {
+                    try {
 
-                    value+=" TYPE >> "+field.getType().getName();
-                    field.set(null, value);
+                        value += " Static injection....  " + field.getType().getName();
+                        //refactored from field.set(null, value);
+                        RefUtils.setStaticField(aClass.getName(),field.getName(),value);
 
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                    System.out.println("cant do");
+
+
+
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                        System.out.println("cant do");
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (NoSuchFieldException e) {
+                        e.printStackTrace();
+                    }
+                }// non static field processing
+                else{
+                    try {
+                        Object old = Class.forName(aClass.getName());
+                        System.out.println(aClass.getName()+" OLD "+old.toString());
+
+                        Object oldVal = RefUtils.getField(old,field.getName());
+                        System.out.println("Old Val"+oldVal);
+                        field.set(oldVal,"lol");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
             field.setAccessible(false);
