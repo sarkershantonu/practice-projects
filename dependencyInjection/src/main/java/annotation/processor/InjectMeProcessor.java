@@ -23,6 +23,7 @@ public class InjectMeProcessor {
             System.out.println("Value to assign = "+value);
             if(Modifier.isStatic(field.getModifiers())&&field.isAnnotationPresent(InjectMeHere.class)){
                 try {
+
                     value+=" TYPE >> "+field.getType().getName();
                     field.set(null, value);
 
@@ -43,6 +44,5 @@ public class InjectMeProcessor {
         inject(aClass);
 
     }
-
 
 }
