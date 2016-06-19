@@ -1,6 +1,7 @@
 package annotation.processor;
 
 import annotation.InjectMeHere;
+import products.Service;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -12,70 +13,50 @@ import java.lang.reflect.Modifier;
 
 public class InjectMeProcessor {
 
-    public static void inject(Class<?> aClass)
-    {
+    public static void inject(Class<?> aClass) {
         Object o = Factory.getObject(aClass);
         String packageinfo = aClass.getPackage().getName();
-        for(Field field : aClass.getDeclaredFields()) {
+        String className = aClass.getName();
+        for (Field field : aClass.getDeclaredFields()) {
             field.setAccessible(true);
             String value = "Shantonu Example : ";
-            System.out.println("field = "+field.getName());
-            if(field.isAnnotationPresent(InjectMeHere.class)) {
-                if (Modifier.isStatic(field.getModifiers())) {
-                    try {
+            System.out.println("field = " + field.getName());
 
-                        value += " Static injection....  " + field.getType().getName();
-                        //refactored from field.set(null, value);
-                        RefUtils.setStaticField(aClass.getName(),field.getName(),value);
+            if (field.isAnnotationPresent(InjectMeHere.class)) {
+                if (field.getType().isAssignableFrom(String.class)) {// it is better to use assignable to string rather direct equal
+                    if (Modifier.isStatic(field.getModifiers())) {
+                        try {
+                            value += " Static injection....  " + field.getType().getName();
+                            //refactored from field.set(null, value);
+                            RefUtils.setStaticField(className, field.getName(), value);
 
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                        System.out.println("cant do");
-                    } catch (ClassNotFoundException e) {
-                        e.printStackTrace();
-                    } catch (NoSuchFieldException e) {
-                        e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                            System.out.println("cant do");
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        } catch (NoSuchFieldException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        try {
+                            Object old = o;
+                            field.set(old, "lol");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
-                }
-                else{
-                    try {
-                        Object old = o;
-                        System.out.println(aClass.getName()+" OLD "+old.toString());
-                        field.set(old,"lol");
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                }else if (field.getType().isAssignableFrom(Service.class)){
+
                 }
             }
             field.setAccessible(false);
         }
     }
 
-    public static void inject(Class<?> aClass,Object obj){
-        inject(aClass);
+    private static void assign(){}
 
-        for(Field field : obj.getClass().getDeclaredFields()){
-            if (field.isAnnotationPresent(InjectMeHere.class)) {
-                System.out.println("name => "+field.getName());
-                try {
-                    if(!Modifier.isStatic(field.getModifiers())){
-                        System.out.println("Non static name => "+field.getName());
-                        RefUtils.setField(obj,field.getName(),"SettingVAL");
-                    }
-
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                } catch (NoSuchFieldException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-    }
-
-    public static void run(Class<?> aClass){
+    public static void run(Class<?> aClass) {
         inject(aClass);
 
     }

@@ -9,9 +9,9 @@ import annotation.processor.Factory;
  */
 public class Application {
 
-    private static Application app;
-    public Application(){}
-    /*static {
+
+    /* this is needed when we do not use apploader
+    static {
         Factory.createInstance(Application.class);
         InjectMeProcessor.inject(Application.class);
     }*/
@@ -22,9 +22,8 @@ public class Application {
     private String service = "old normal value";
 
     public static void main(String... args) throws IllegalAccessException, NoSuchFieldException, ClassNotFoundException {
-        //app = Application.getObject();
         AppLoader.load(Application.class);
-        app = (Application) Factory.getObject(Application.class);
+        Application app = (Application) Factory.getObject(Application.class);
         // System.out.println("Injecting XML" + new Application().aService.serve());
         System.out.println("String in static member >> "+Application.aService);
         System.out.println("String in regular member >> "+app.service);
