@@ -17,6 +17,15 @@
         </developer>
     </developers>
     <properties></properties>
+
+    <dependencies>
+        <!--https://github.com/ronmamo/reflections-->
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.10</version>
+        </dependency>
+    </dependencies>
 <build>
     <plugins>
         <plugin>

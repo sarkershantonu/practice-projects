@@ -46,7 +46,7 @@ public class InjectMeProcessor {
                             e.printStackTrace();
                         }
                     }
-                }else if (field.getType().isAssignableFrom(Service.class)){
+                }else if (field.getType().isAssignableFrom(Service.class)){//this is todo, supporting the interface we need to implement
 
                 }
             }
