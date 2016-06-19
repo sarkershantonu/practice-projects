@@ -5,6 +5,7 @@ import sun.reflect.annotation.AnnotationType;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 
 /**
  * Created by shantonu on 6/16/16.
@@ -20,7 +21,7 @@ public class InjectMeProcessor {
             field.setAccessible(true);
             String value = "I am assigning a value";
             System.out.println("Value to assign = "+value);
-            if(field.isAnnotationPresent(InjectMeHere.class)){
+            if(Modifier.isStatic(field.getModifiers())&&field.isAnnotationPresent(InjectMeHere.class)){
                 try {
                     value+=" TYPE >> "+field.getType().getName();
                     field.set(null, value);
