@@ -1,6 +1,7 @@
 package annotation.processor;
 
 import annotation.InjectMeHere;
+import products.FileService;
 import products.Service;
 import products.XMLService;
 
@@ -42,7 +43,7 @@ public class InjectMeProcessor {
                     }
                     else {
                         try {
-                            
+
                            //refactored from  field.set(old, "lol");
                             RefUtils.setField(o,field.getName(),"lol");
                         } catch (Exception e) {
@@ -62,7 +63,15 @@ public class InjectMeProcessor {
                         }
 
                     }else{
-
+                        try {
+                            RefUtils.setField(o,field.getName(), new FileService());
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        } catch (NoSuchFieldException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
