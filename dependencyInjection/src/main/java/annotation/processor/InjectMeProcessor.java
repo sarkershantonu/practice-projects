@@ -64,7 +64,7 @@ public class InjectMeProcessor {
 
                     }else{
                         try {
-                            RefUtils.setField(o,field.getName(), new FileService());
+                            RefUtils.setField(o,field.getName(), new FileService());// same todo
                         } catch (ClassNotFoundException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
