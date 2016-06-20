@@ -47,7 +47,11 @@ public class InjectMeProcessor {
                         }
                     }
                 }else if (field.getType().isAssignableFrom(Service.class)){//this is todo, supporting the interface we need to implement
+                    if (Modifier.isStatic(field.getModifiers())) {
 
+                    }else{
+
+                    }
                 }
             }
             field.setAccessible(false);
