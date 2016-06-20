@@ -2,6 +2,7 @@ package annotation.processor;
 
 import annotation.InjectMeHere;
 import products.Service;
+import products.XMLService;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -38,16 +39,27 @@ public class InjectMeProcessor {
                         } catch (NoSuchFieldException e) {
                             e.printStackTrace();
                         }
-                    } else {
+                    }
+                    else {
                         try {
-                            Object old = o;
-                            field.set(old, "lol");
+                            
+                           //refactored from  field.set(old, "lol");
+                            RefUtils.setField(o,field.getName(),"lol");
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
                 }else if (field.getType().isAssignableFrom(Service.class)){//this is todo, supporting the interface we need to implement
                     if (Modifier.isStatic(field.getModifiers())) {
+                        try {
+                            RefUtils.setStaticField(className, field.getName(), new XMLService());//todo , using reflection to get service interface implements.
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        } catch (NoSuchFieldException e) {
+                            e.printStackTrace();
+                        }
 
                     }else{
 
