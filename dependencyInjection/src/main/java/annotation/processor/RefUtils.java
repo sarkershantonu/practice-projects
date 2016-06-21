@@ -1,5 +1,6 @@
 package annotation.processor;
 
+import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -44,11 +45,23 @@ public class RefUtils {
      * This will returns all of the classes implemented form the interface/class/abstract class
      * @param aClass
      * @return
-     * TODO using reflection 
+     * TODO using reflection
      */
-    public static List<Class<?>> getTypesOf(Class<?> aClass){
+    public static List<Class<?>> getSubTypesOf(Class<?> aClass){
         List<Class<?>> classes = new ArrayList<>();
+        String classPath = System.getProperty("java.class.path");
+        String javaHome = System.getProperty("java.home");
+        String[] paths = classPath.split(File.separator);
+// todo , 1 , get all paths from maven target, and
+        return classes;
+    }
 
+    public static List<Class<?>> getSuperTypesOf(Class<?> aClass){
+        List<Class<?>> classes = new ArrayList<>();
+        classes.add(aClass.getSuperclass());
+        for(Class<?> k: aClass.getInterfaces()){// gettint interfaces
+            classes.add(k);
+        }
 
         return classes;
     }
