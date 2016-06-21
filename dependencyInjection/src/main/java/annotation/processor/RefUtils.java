@@ -3,6 +3,8 @@ package annotation.processor;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by shantonu on 6/19/16.
@@ -36,5 +38,18 @@ public class RefUtils {
 
     public static Object createInstance(final Class<?> aClass) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         return aClass.getConstructor().newInstance();
+    }
+
+    /**
+     * This will returns all of the classes implemented form the interface/class/abstract class
+     * @param aClass
+     * @return
+     * TODO using reflection 
+     */
+    public static List<Class<?>> getTypesOf(Class<?> aClass){
+        List<Class<?>> classes = new ArrayList<>();
+
+
+        return classes;
     }
 }
