@@ -53,7 +53,8 @@ public class InjectMeProcessor {
                 }else if (field.getType().isAssignableFrom(Service.class)){//this is todo, supporting the interface we need to implement
                     if (Modifier.isStatic(field.getModifiers())) {
                         try {
-                            RefUtils.setStaticField(className, field.getName(), new XMLService());//todo , using reflection to get service interface implements.
+
+                            RefUtils.setStaticField(className, field.getName(), Factory.getObject(XMLService.class));//todo , using reflection to get service interface implements.
                         } catch (ClassNotFoundException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -64,7 +65,7 @@ public class InjectMeProcessor {
 
                     }else{
                         try {
-                            RefUtils.setField(o,field.getName(), new FileService());// same todo
+                            RefUtils.setField(o,field.getName(), Factory.getObject(FileService.class));// same todo
                         } catch (ClassNotFoundException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
