@@ -8,6 +8,7 @@ import products.XMLService;
  * Created by shantonu on 6/19/16.
  */
 public class AppLoader {
+
     public static void load(Class<?> aClass){
         load();
         Factory.createInstance(aClass);
@@ -23,7 +24,7 @@ public class AppLoader {
         Factory.createInstance(FileService.class);
     }
    // aulternate loader , it should be in class path, inject externally
-    /*
+/*
     static {
         Factory.createInstance(XMLService.class);
         Factory.createInstance(FileService.class);

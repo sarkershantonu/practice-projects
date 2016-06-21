@@ -10,6 +10,7 @@ import products.Service;
  */
 public class Application {
 
+
     /* this is needed when we do not use apploader
     static {
         Factory.createInstance(Application.class);
