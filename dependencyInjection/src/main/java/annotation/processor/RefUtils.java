@@ -41,6 +41,16 @@ public class RefUtils {
         return aClass.getConstructor().newInstance();
     }
 
+    public static List<Class<?>> getSuperTypesOf(Class<?> aClass){
+        List<Class<?>> classes = new ArrayList<>();
+        classes.add(aClass.getSuperclass());
+        for(Class<?> k: aClass.getInterfaces()){// gettint interfaces
+            classes.add(k);
+        }
+
+        return classes;
+    }
+
     /**
      * This will returns all of the classes implemented form the interface/class/abstract class
      * @param aClass
@@ -51,18 +61,24 @@ public class RefUtils {
         List<Class<?>> classes = new ArrayList<>();
         String classPath = System.getProperty("java.class.path");
         String javaHome = System.getProperty("java.home");
-        String[] paths = classPath.split(File.separator);
-// todo , 1 , get all paths from maven target, and
-        return classes;
-    }
-
-    public static List<Class<?>> getSuperTypesOf(Class<?> aClass){
-        List<Class<?>> classes = new ArrayList<>();
-        classes.add(aClass.getSuperclass());
-        for(Class<?> k: aClass.getInterfaces()){// gettint interfaces
-            classes.add(k);
+        String[] paths = classPath.split(seperator());
+        // todo , 1 , get all paths from maven target, and
+        File file = new File(javaHome+seperator()+"lib");// non maven deployent
+        if(file.exists()){
+            getClasses()
         }
-
         return classes;
     }
+
+    //todo
+   private static List<String> getClasses(File folder, Class<?> aClass, boolean isWithJar){
+       List<String> found = new ArrayList<>();
+
+       return found;
+   }
+
+    private static String seperator(){
+        return System.getProperty("path.separator");
+    }
+
 }
