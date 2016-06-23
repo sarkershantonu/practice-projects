@@ -77,6 +77,16 @@ public class RefUtils {
        return found;
    }
 
+    private static String getClassNameFromFile(File root, File file){
+        StringBuilder stringBuilder=new StringBuilder();
+
+        String filename = file.getName();
+        
+        stringBuilder.append(filename.substring(0,filename.lastIndexOf(".class")));
+        file= file.getParentFile();//get the folder name
+
+
+    }
     private static String seperator(){
         return System.getProperty("path.separator");
     }
