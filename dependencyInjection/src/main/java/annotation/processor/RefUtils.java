@@ -71,8 +71,16 @@ public class RefUtils {
     }
 
     //todo
-   private static List<String> getClasses(File folder, Class<?> aClass, boolean isWithJar){
+   private static List<String> getClasses(File rootFolder, File file,Class<?> aClass, boolean isWithJar){
        List<String> found = new ArrayList<>();
+       if(file.isDirectory()){
+           for(File aFile: file.listFiles()){
+               getClasses(rootFolder,aFile,aClass,isWithJar);//calling it self
+           }
+       }
+       else{
+
+       }
 
        return found;
    }
