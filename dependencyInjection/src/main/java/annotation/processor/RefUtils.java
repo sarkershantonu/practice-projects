@@ -75,7 +75,7 @@ public class RefUtils {
        List<String> found = new ArrayList<>();
        if(file.isDirectory()){
            for(File aFile: file.listFiles()){
-               getClasses(rootFolder,aFile,aClass,isWithJar);//calling it self
+               getClasses(rootFolder,aFile,aClass,isWithJar);//this is check for folders , calling it self
            }
        }
        else{
