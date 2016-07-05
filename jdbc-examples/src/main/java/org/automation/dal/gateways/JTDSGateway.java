@@ -8,6 +8,6 @@ class JTDSGateway {
     public static final String urlLargeLinit = "jdbc:jtds:sybase://<host>:<ip>/<dbName>;batchSize=10000";
     public static synchronized Connection getConnection() throws SQLException {
         DriverManager.registerDriver(new net.sourceforge.jtds.jdbc.Driver());
-        return DriverManager.getConnection(url, "MFILES5", "Mfiles5");
+        return DriverManager.getConnection(url, "user", "pass");
     }
 }
