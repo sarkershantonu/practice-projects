@@ -1,4 +1,4 @@
-package org.automation.dal.gateways;
+package org.automation.dal;
 
 /**
  * Created by shantonu on 7/5/16.

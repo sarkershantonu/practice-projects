@@ -12,6 +12,14 @@
         <module>Sybase</module>
         <module>MySql</module>
         <module>Jdbc-Common</module>
+        <module>Oracle</module>
+        <module>SqlServer</module>
+        <module>PostgreSQL</module>
+        <module>Ingres</module>
+        <module>Apache Derby</module>
+        <module>Cassandra</module>
+        <module>SQL-Lite</module>
+        <module>Access</module>
     </modules>
 
     <dependencies>

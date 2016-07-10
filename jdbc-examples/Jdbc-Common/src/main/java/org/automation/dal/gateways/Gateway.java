@@ -1,6 +1,8 @@
-import org.automation.dal.TestQuery;
-import org.automation.dal.gateways.JTDSGateway;
-import org.automation.dal.gateways.JconnectGateway;
+package org.automation.dal.gateways;
+
+import org.automation.dal.JTDSGateway;
+import org.automation.dal.JconnectGateway;
+import org.automation.dal.gateways.resultsets.TestQuery;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

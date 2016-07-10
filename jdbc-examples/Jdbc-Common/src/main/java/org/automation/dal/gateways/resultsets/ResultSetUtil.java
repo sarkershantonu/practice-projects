@@ -1,3 +1,4 @@
+package org.automation.dal.gateways.resultsets;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

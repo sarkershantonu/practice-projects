@@ -1,4 +1,4 @@
-package org.automation.dal;
+package org.automation.dal.gateways.resultsets;
 
 /**
  * Created by shantonu on 7/10/16.
