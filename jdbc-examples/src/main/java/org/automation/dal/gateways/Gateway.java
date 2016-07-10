@@ -1,3 +1,12 @@
+import org.automation.dal.TestQuery;
+import org.automation.dal.gateways.JTDSGateway;
+import org.automation.dal.gateways.JconnectGateway;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Gateway {
 
     private Gateway() {

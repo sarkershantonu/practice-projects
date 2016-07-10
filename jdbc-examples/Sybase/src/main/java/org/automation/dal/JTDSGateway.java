@@ -1,4 +1,4 @@
-package org.automation.dal.gateways;
+package org.automation.dal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
