@@ -18,6 +18,8 @@ public class Application {
                 setPackage(packageName).
                 setName(name).
                 setPublic();
+        javaClass.addImport(includes[0]);
+        javaClass.addAnnotation()
 
         System.out.println(javaClass);
     }
