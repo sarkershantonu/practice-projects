@@ -9,14 +9,31 @@ import org.jboss.forge.roaster.model.source.JavaClassSource;
  */
 public class Application {
     public static void main(String[] args) {
+        createClass("Shantonu", "org.automation","org.junit.test");
 
     }
-    public static void createClass(String name, String packageName, String[] includes) {
+    public static void createClass(String name, String packageName, String... includes) {
 
         JavaClassSource javaClass = Roaster.create(JavaClassSource.class).
                 setPackage(packageName).
                 setName(name).
                 setPublic();
 
+        System.out.println(javaClass);
+    }
+
+    public static JavaClassSource addIncludes(JavaClassSource source, String... args){
+
+        for(String include : args) {
+            source.addImport(include);
+        }
+        return source;
+    }
+    public static JavaClassSource addIncludes(JavaClassSource source, Class<?>... args){
+
+        for(Class include : args) {
+            source.addImport(include);
+        }
+        return source;
     }
 }
