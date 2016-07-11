@@ -4,9 +4,15 @@ import org.jboss.forge.roaster.Roaster;
 import org.jboss.forge.roaster.model.JavaClass;
 import org.jboss.forge.roaster.model.source.JavaInterfaceSource;
 import org.jboss.forge.roaster.model.source.JavaClassSource;
+import org.jboss.forge.roaster.model.util.Strings;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by shantonu on 7/10/16.
@@ -30,6 +36,10 @@ public class Application {
         //javaClass.addTypeVariable("T").setBounds(Object.class, Integer.class);
         //javaClass = addGenericsTypeParameter(javaClass, "T",String.class);
 
+        javaClass.addMethod().setPublic().setReturnTypeVoid().setName("TestD").setParameters("String ddd, String ppp");
+
+        javaClass = addPublicVoidMethod(javaClass, "TestDdd",
+                new String [][] {new String[]{"String", "Sasadasd"},new String[]{"Integer", "5"}});
         System.out.println(javaClass);
 
     }
@@ -49,6 +59,21 @@ public class Application {
         return source;
     }
 
+    public static JavaClassSource addPublicVoidMethod(JavaClassSource source, String methodName, final String[][] typeAndVerNames){
+        StringBuilder arguments = new StringBuilder();
+        int max = typeAndVerNames.length;
+        for(int i=0; i<max;i++){
+            arguments.append(typeAndVerNames[i][0]+" "+typeAndVerNames[i][1]);
+            if(i<max-1){
+                arguments.append(",");
+            }
+
+        }
+
+        source.addMethod().setPublic().setReturnTypeVoid().setName(methodName).setParameters(arguments.toString());
+
+        return source;
+    }
     public static JavaClassSource addGenericsTypeParameter(JavaClassSource source, Class<?> aClass){
         source.addTypeVariable(aClass.getSimpleName());
         return source;
