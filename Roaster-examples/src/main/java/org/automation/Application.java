@@ -42,9 +42,17 @@ public class Application {
 
         //javaClass = addPublicVoidMethod(javaClass, "TestWithClass", arguments);
         System.out.println(javaClass);
+        System.out.println( javaClass.getMethod("TestDdd").toString());
+
 
     }
-
+/**
+ * Need to check
+ * MethodSource<?> method = javaClass.addMethod().setPublic().setName("isValid").setReturnType("boolean");
+ method.addParameter(Number.class, "value");
+ method.addParameter(ConstraintValidatorContext.class, "context");
+ method.setBody("return false;").addAnnotation(Override.class);
+ */
     public static JavaClassSource addIncludes(JavaClassSource source, String... args){
 
         for(String include : args) {
