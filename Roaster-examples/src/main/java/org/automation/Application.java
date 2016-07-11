@@ -9,10 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by shantonu on 7/10/16.
@@ -36,10 +33,14 @@ public class Application {
         //javaClass.addTypeVariable("T").setBounds(Object.class, Integer.class);
         //javaClass = addGenericsTypeParameter(javaClass, "T",String.class);
 
-        javaClass.addMethod().setPublic().setReturnTypeVoid().setName("TestD").setParameters("String ddd, String ppp");
+        //javaClass.addMethod().setPublic().setReturnTypeVoid().setName("TestD").setParameters("String ddd, String ppp");
 
-        javaClass = addPublicVoidMethod(javaClass, "TestDdd",
-                new String [][] {new String[]{"String", "Sasadasd"},new String[]{"Integer", "5"}});
+        javaClass = addPublicVoidMethod(javaClass, "TestDdd",new String [][] {new String[]{"@Param(\"Ha ha ha\") int", "aInt"},new String[]{"Double", "aDouble"},new String[]{"String", "doit"}});
+        HashMap arguments = new HashMap<String , Class<?>>();
+        arguments.put("MyArgument1", String.class);
+        arguments.put("MyArgument2", String.class);
+
+        //javaClass = addPublicVoidMethod(javaClass, "TestWithClass", arguments);
         System.out.println(javaClass);
 
     }
@@ -58,7 +59,22 @@ public class Application {
         }
         return source;
     }
+//this is not working, need to tweak the parsing.
+    public static JavaClassSource addPublicVoidMethod(JavaClassSource source, String methodName, Map<String, Class<?>> verNameAndType){
+        HashMap<String,Class<?>> items = (HashMap<String, Class<?>>) verNameAndType;
+        int max = items.size();
+        source.addMethod().setPublic().setReturnTypeVoid().setName(methodName);
 
+        Iterator i = items.entrySet().iterator();
+        while (i.hasNext()){
+            Map.Entry arg = (Map.Entry) i.next();
+            String parameterName = (String) arg.getKey();
+            Class<?> parameterType = items.get(parameterName);
+        source.getMethod(methodName).addParameter(parameterType, parameterName);
+        }
+
+        return source;
+    }
     public static JavaClassSource addPublicVoidMethod(JavaClassSource source, String methodName, final String[][] typeAndVerNames){
         StringBuilder arguments = new StringBuilder();
         int max = typeAndVerNames.length;
@@ -70,7 +86,9 @@ public class Application {
 
         }
 
-        source.addMethod().setPublic().setReturnTypeVoid().setName(methodName).setParameters(arguments.toString());
+        String args = arguments.toString();
+        System.out.println("Arguments => "+args);
+        source.addMethod().setPublic().setReturnTypeVoid().setName(methodName).setParameters(args);
 
         return source;
     }
