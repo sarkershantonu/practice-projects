@@ -4,12 +4,16 @@ import org.jboss.forge.roaster.Roaster;
 import org.jboss.forge.roaster.model.JavaClass;
 import org.jboss.forge.roaster.model.source.JavaInterfaceSource;
 import org.jboss.forge.roaster.model.source.JavaClassSource;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+
 /**
  * Created by shantonu on 7/10/16.
  */
 public class Application {
     public static void main(String[] args) {
-        createClass("Shantonu", "org.automation","org.junit.test");
+        createClass("TestWithParameter", "org.automation","org.junit.test");
 
     }
     public static void createClass(String name, String packageName, String... includes) {
@@ -19,7 +23,7 @@ public class Application {
                 setName(name).
                 setPublic();
         javaClass.addImport(includes[0]);
-        javaClass.addAnnotation().setName("Test");
+        javaClass.addAnnotation(RunWith.class).setClassValue(Parameterized.class);
 
         System.out.println(javaClass);
     }
