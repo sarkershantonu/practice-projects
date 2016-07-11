@@ -10,6 +10,7 @@ import org.junit.runners.Parameterized;
 
 /**
  * Created by shantonu on 7/10/16.
+ * target is to generate this => https://github.com/sarkershantonu/Unit-Testing-Examples/blob/master/Junit-Examples/src/test/java/parameterization/TestParameter.java
  */
 public class Application {
     public static void main(String[] args) {
@@ -24,8 +25,10 @@ public class Application {
                 setPublic();
         javaClass.addImport(includes[0]);
         javaClass.addAnnotation(RunWith.class).setClassValue(Parameterized.class);
-
+        //javaClass.addTypeVariable("sks");
+        javaClass = addGenericsTypeParameter(javaClass, String.class);
         System.out.println(javaClass);
+        System.out.println(Application.class.getSimpleName());
     }
 
     public static JavaClassSource addIncludes(JavaClassSource source, String... args){
@@ -40,6 +43,11 @@ public class Application {
         for(Class include : args) {
             source.addImport(include);
         }
+        return source;
+    }
+
+    public static JavaClassSource addGenericsTypeParameter(JavaClassSource source, Class<?> aClass){
+        source.addTypeVariable(aClass.getSimpleName());
         return source;
     }
 }
