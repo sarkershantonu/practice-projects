@@ -26,9 +26,12 @@ public class Application {
         javaClass.addImport(includes[0]);
         javaClass.addAnnotation(RunWith.class).setClassValue(Parameterized.class);
         //javaClass.addTypeVariable("sks");
-        javaClass = addGenericsTypeParameter(javaClass, String.class);
+        //javaClass = addGenericsTypeParameter(javaClass, String.class);
+        //javaClass.addTypeVariable("T").setBounds(Object.class, Integer.class);
+        //javaClass = addGenericsTypeParameter(javaClass, "T",String.class);
+
         System.out.println(javaClass);
-        System.out.println(Application.class.getSimpleName());
+
     }
 
     public static JavaClassSource addIncludes(JavaClassSource source, String... args){
@@ -48,6 +51,10 @@ public class Application {
 
     public static JavaClassSource addGenericsTypeParameter(JavaClassSource source, Class<?> aClass){
         source.addTypeVariable(aClass.getSimpleName());
+        return source;
+    }
+    public static JavaClassSource addGenericsTypeParameter(JavaClassSource source,String T,  Class<?> aClass){
+        source.addTypeVariable(T).setBounds(aClass.getSimpleName());
         return source;
     }
 }
