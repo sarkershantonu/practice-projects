@@ -19,7 +19,7 @@ public class Application {
                 setName(name).
                 setPublic();
         javaClass.addImport(includes[0]);
-        javaClass.addAnnotation()
+        javaClass.addAnnotation().setName("Test");
 
         System.out.println(javaClass);
     }
