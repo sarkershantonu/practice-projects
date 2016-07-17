@@ -10,7 +10,7 @@ import java.sql.SQLException;
 /**
  * Created by shantonu on 7/17/16.
  */
-public class MSSqlServerDataSource {
+public class SqlServerDataSource {
     private static final String user = "user";
     private static final String pass = "pass";
     private static final String HOST = "HOST";
