@@ -1,6 +1,6 @@
 package org.automation.dal.gateways;
 
-import org.automation.dal.JTDSGateway;
+import org.automation.dal.JtdsSybase;
 import org.automation.dal.JconnectSybase;
 import org.automation.dal.gateways.resultsets.TestQuery;
 
@@ -18,7 +18,7 @@ public class Gateway {
     private static PreparedStatement statement = null;
 
     public static synchronized ResultSet getResults(String query) throws SQLException {
-        conn = JTDSGateway.getConnection();// you can change to jconnect here
+        conn = JtdsSybase.getConnection();// you can change to jconnect here
         statement = conn.prepareStatement(query);
         return statement.executeQuery();
     }
@@ -36,7 +36,7 @@ public class Gateway {
     }
 
     private static void testJDBC() throws SQLException {
-        conn = JTDSGateway.getConnection();
+        conn = JtdsSybase.getConnection();
         statement = conn.prepareStatement(TestQuery.demo);
         ResultSet result = statement.executeQuery();
         while (result.next()) {

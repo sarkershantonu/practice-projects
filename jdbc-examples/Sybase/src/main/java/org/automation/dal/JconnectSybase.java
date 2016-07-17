@@ -1,6 +1,5 @@
 package org.automation.dal;
 
-import com.sybase.jdbc3.jdbc.SybDriver;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +11,7 @@ import java.sql.SQLException;
  */
 public class JconnectSybase {
 
-    public static String url= "jdbc:sybase:Tds:<host>:<port>/<db>";
+    public static String url= "jdbc:sybase:Tds:<host>:<port>";
     private static final String user = "user";
     private static final String pass = "pass";
     private static final String className = "com.sybase.jdbc3.jdbc.SybDriver";
