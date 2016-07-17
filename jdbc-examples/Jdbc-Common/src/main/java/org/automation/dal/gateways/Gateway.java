@@ -1,7 +1,7 @@
 package org.automation.dal.gateways;
 
 import org.automation.dal.JTDSGateway;
-import org.automation.dal.JconnectGateway;
+import org.automation.dal.JconnectSybase;
 import org.automation.dal.gateways.resultsets.TestQuery;
 
 import java.sql.Connection;
@@ -24,7 +24,7 @@ public class Gateway {
     }
 
     private static void testJConnect() throws SQLException {
-        conn = JconnectGateway.getConnection();
+        conn = JconnectSybase.getConnection();
         ResultSet resultSet = conn.createStatement().executeQuery(TestQuery.demo);
         while (resultSet.next()) {
             for (int i = 1; i <= 9; i++) {
