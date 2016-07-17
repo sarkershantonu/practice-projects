@@ -85,17 +85,3 @@ oracle.jdbc.driver.OracleDriver
 Oracle OCI 9i
 jdbc:oracle:oci:@<SID>
 oracle.jdbc.driver.OracleDriver
-
-
-Sybase (jConnect 4.2 and earlier)
-jdbc:sybase:Tds:<HOST>:<PORT>
-com.sybase.jdbc.SybDriver
-
-Sybase (jConnect 5.2)My
-jdbc:sybase:Tds:<HOST>:<PORT>
-com.sybase.jdbc2.jdbc.SybDriver
-
-
-
-=> one way  Class.forName("Driver name");
-  Connection con = DriverManager.getConnenction("jdbcurl","username","password");
