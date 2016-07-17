@@ -13,7 +13,7 @@ public class JdbcMySql {
     private static final String pass = "pass";
 
     public static synchronized Connection getConnection() throws SQLException {
-        DriverManager.registerDriver(new net.sourceforge.jtds.jdbc.Driver());
+        DriverManager.registerDriver(new com.mysql.jdbc.Driver());
         return DriverManager.getConnection(url, user, pass);
     }
 }
