@@ -77,9 +77,6 @@ Microsoft SQL Server 2000 (Microsoft Driver)
 jdbc:microsoft:sqlserver://<HOST>:<PORT>[;DatabaseName=<DB>]
 com.microsoft.jdbc.sqlserver.SQLServerDriver
 
-MySQL (MM.MySQL Driver)
-jdbc:mysql://<HOST>:<PORT>/<DB>
-org.gjt.mm.mysql.Driver
 
 Oracle OCI 8i
 jdbc:oracle:oci8:@<SID>
