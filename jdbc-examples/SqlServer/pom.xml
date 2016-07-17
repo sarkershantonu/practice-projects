@@ -16,6 +16,13 @@
         <artifactId>jtds</artifactId>
         <version>1.3.1</version>
     </dependency>
+    <dependency>
+        <groupId>com.microsoft</groupId>
+        <artifactId>sqlserver.jdbc</artifactId>
+        <version>6</version>
+        <scope>system</scope>
+        <systemPath>${basedir}/lib/sqljdbc.jar</systemPath>
+    </dependency>
 </dependencies>
 
 </project>

@@ -1,5 +1,7 @@
 package org.automation.dal;
 
+import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -19,8 +21,9 @@ public class JtdsSqlServer {
         return DriverManager.getConnection(url, user,pass);
     }
 
-    public static Connection getLegacyConnection() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+    public static synchronized Connection getLegacyConnection() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         Class.forName(className).newInstance();
         return DriverManager.getConnection(url,user,pass);
     }
+
 }
