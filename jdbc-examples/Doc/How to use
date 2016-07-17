@@ -101,7 +101,7 @@ Sybase (jConnect 4.2 and earlier)
 jdbc:sybase:Tds:<HOST>:<PORT>
 com.sybase.jdbc.SybDriver
 
-Sybase (jConnect 5.2)
+Sybase (jConnect 5.2)My
 jdbc:sybase:Tds:<HOST>:<PORT>
 com.sybase.jdbc2.jdbc.SybDriver
 
