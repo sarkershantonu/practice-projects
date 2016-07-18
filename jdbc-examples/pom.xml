@@ -20,6 +20,8 @@
         <module>Cassandra</module>
         <module>SQL-Lite</module>
         <module>Access</module>
+        <module>DB2</module>
+        <module>HSQLDB</module>
     </modules>
 
     <dependencies>

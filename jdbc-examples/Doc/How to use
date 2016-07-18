@@ -73,10 +73,6 @@ Microsoft SQL Server (Sprinta Driver)
 jdbc:inetdae:<HOST>:<PORT>?database=<DB>
 com.inet.tds.TdsDriver
 
-Microsoft SQL Server 2000 (Microsoft Driver)
-jdbc:microsoft:sqlserver://<HOST>:<PORT>[;DatabaseName=<DB>]
-com.microsoft.jdbc.sqlserver.SQLServerDriver
-
 
 Oracle OCI 8i
 jdbc:oracle:oci8:@<SID>
@@ -85,3 +81,7 @@ oracle.jdbc.driver.OracleDriver
 Oracle OCI 9i
 jdbc:oracle:oci:@<SID>
 oracle.jdbc.driver.OracleDriver
+
+Todo from this list =>
+https://docs.tibco.com/pub/policy-director/1.1.0/doc/html/GUID-F4BF526C-A2E8-436B-BE21-6D11CEBA84A5.html
+https://www.soapui.org/jdbc/reference/jdbc-drivers.html
