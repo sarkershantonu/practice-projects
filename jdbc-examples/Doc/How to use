@@ -65,13 +65,9 @@ Hypersonic SQL (v1.3 and later)
 jdbc:HypersonicSQL:<DB>
 org.hsql.jdbcDriver
 
-Microsoft SQL Server (JTurbo Driver)
+Microsoft SQL Server (JTurbo Driver) > commercial solution
 jdbc:JTurbo://<HOST>:<PORT>/<DB>
 com.ashna.jturbo.driver.Driver
-
-Microsoft SQL Server (Sprinta Driver)
-jdbc:inetdae:<HOST>:<PORT>?database=<DB>
-com.inet.tds.TdsDriver
 
 
 Oracle OCI 8i
@@ -85,3 +81,11 @@ oracle.jdbc.driver.OracleDriver
 Todo from this list =>
 https://docs.tibco.com/pub/policy-director/1.1.0/doc/html/GUID-F4BF526C-A2E8-436B-BE21-6D11CEBA84A5.html
 https://www.soapui.org/jdbc/reference/jdbc-drivers.html
+http://publib.boulder.ibm.com/wasce/V2.1.1/en/configuring-datasources.html
+
+apache derby => https://docs.oracle.com/javase/tutorial/jdbc/basics/connecting.html
+
+
+ORACLE	oracle.jdbc.driver.OracleDriver	jdbc:oracle:thin:@hostname:port Number:databaseName
+
+DB2	COM.ibm.db2.jdbc.net.DB2Driver	jdbc:db2:hostname:port Number/databaseName

@@ -19,12 +19,13 @@
 
 
     <!--this need to check implementation -->
+<!--
     <dependency>
         <groupId>org.tranql</groupId>
         <artifactId>tranql-connector-sqlserver2008-xa</artifactId>
         <version>1.1</version>
     </dependency>
-
+-->
 
     <dependency>
         <groupId>com.microsoft</groupId>

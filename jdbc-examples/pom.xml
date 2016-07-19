@@ -22,6 +22,7 @@
         <module>Access</module>
         <module>DB2</module>
         <module>HSQLDB</module>
+        <module>InterBase</module>
     </modules>
 
     <dependencies>
