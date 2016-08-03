@@ -17,9 +17,10 @@ import java.util.*;
  */
 public class Application {
     public static void main(String[] args) {
-        createClass("TestWithParameter", "org.automation","org.junit.test");
+        createClass("TestWithParameter", "org.automation", "org.junit.test");
 
     }
+
     public static void createClass(String name, String packageName, String... includes) {
 
         JavaClassSource javaClass = Roaster.create(JavaClassSource.class).
@@ -35,76 +36,82 @@ public class Application {
 
         //javaClass.addMethod().setPublic().setReturnTypeVoid().setName("TestD").setParameters("String ddd, String ppp");
 
-        javaClass = addPublicVoidMethod(javaClass, "TestDdd",new String [][] {new String[]{"@Param(\"Ha ha ha\") int", "aInt"},new String[]{"Double", "aDouble"},new String[]{"String", "doit"}});
-        HashMap arguments = new HashMap<String , Class<?>>();
+        javaClass = addPublicVoidMethod(javaClass, "TestDdd", new String[][]{new String[]{"@Param(\"Ha ha ha\") int", "aInt"}, new String[]{"Double", "aDouble"}, new String[]{"String", "doit"}});
+        HashMap arguments = new HashMap<String, Class<?>>();
         arguments.put("MyArgument1", String.class);
         arguments.put("MyArgument2", String.class);
 
         //javaClass = addPublicVoidMethod(javaClass, "TestWithClass", arguments);
         System.out.println(javaClass);
-        System.out.println( javaClass.getMethod("TestDdd").toString());
+        System.out.println(javaClass.getMethod("TestDdd").toString());
 
 
     }
-/**
- * Need to check
- * MethodSource<?> method = javaClass.addMethod().setPublic().setName("isValid").setReturnType("boolean");
- method.addParameter(Number.class, "value");
- method.addParameter(ConstraintValidatorContext.class, "context");
- method.setBody("return false;").addAnnotation(Override.class);
- */
-    public static JavaClassSource addIncludes(JavaClassSource source, String... args){
 
-        for(String include : args) {
+    /**
+     * Need to check
+     * MethodSource<?> method = javaClass.addMethod().setPublic().setName("isValid").setReturnType("boolean");
+     * method.addParameter(Number.class, "value");
+     * method.addParameter(ConstraintValidatorContext.class, "context");
+     * method.setBody("return false;").addAnnotation(Override.class);
+     */
+    public static JavaClassSource addIncludes(JavaClassSource source, String... args) {
+
+        for (String include : args) {
             source.addImport(include);
         }
         return source;
     }
-    public static JavaClassSource addIncludes(JavaClassSource source, Class<?>... args){
 
-        for(Class include : args) {
+    public static JavaClassSource addIncludes(JavaClassSource source, Class<?>... args) {
+
+        for (Class include : args) {
             source.addImport(include);
         }
         return source;
     }
-//this is not working, need to tweak the parsing.
-    public static JavaClassSource addPublicVoidMethod(JavaClassSource source, String methodName, Map<String, Class<?>> verNameAndType){
-        HashMap<String,Class<?>> items = (HashMap<String, Class<?>>) verNameAndType;
+
+    //this is not working, need to tweak the parsing.
+    public static JavaClassSource addPublicVoidMethod(JavaClassSource source, String methodName, Map<String, Class<?>> verNameAndType) {
+        HashMap<String, Class<?>> items = (HashMap<String, Class<?>>) verNameAndType;
         int max = items.size();
         source.addMethod().setPublic().setReturnTypeVoid().setName(methodName);
 
         Iterator i = items.entrySet().iterator();
-        while (i.hasNext()){
+        while (i.hasNext()) {
             Map.Entry arg = (Map.Entry) i.next();
             String parameterName = (String) arg.getKey();
             Class<?> parameterType = items.get(parameterName);
-        source.getMethod(methodName).addParameter(parameterType, parameterName);
+            source.getMethod(methodName).addParameter(parameterType, parameterName);
         }
 
         return source;
     }
-    public static JavaClassSource addPublicVoidMethod(JavaClassSource source, String methodName, final String[][] typeAndVerNames){
+
+    public static JavaClassSource addPublicVoidMethod(JavaClassSource source, String methodName, final String[][] typeAndVerNames) {
         StringBuilder arguments = new StringBuilder();
         int max = typeAndVerNames.length;
-        for(int i=0; i<max;i++){
-            arguments.append(typeAndVerNames[i][0]+" "+typeAndVerNames[i][1]);
-            if(i<max-1){
+        for (int i = 0; i < max; i++) {
+            arguments.append(typeAndVerNames[i][0] + " " + typeAndVerNames[i][1]);
+            if (i < max - 1) {
                 arguments.append(",");
             }
 
         }
 
         String args = arguments.toString();
-        System.out.println("Arguments => "+args);
+        System.out.println("Arguments => " + args);
         source.addMethod().setPublic().setReturnTypeVoid().setName(methodName).setParameters(args);
 
         return source;
     }
-    public static JavaClassSource addGenericsTypeParameter(JavaClassSource source, Class<?> aClass){
+
+    public static JavaClassSource addGenericsTypeParameter(JavaClassSource source, Class<?> aClass) {
         source.addTypeVariable(aClass.getSimpleName());
         return source;
     }
-    public static JavaClassSource addGenericsTypeParameter(JavaClassSource source,String T,  Class<?> aClass){
+
+    public static JavaClassSource addGenericsTypeParameter(JavaClassSource source, String T, Class<?> aClass) {
         source.addTypeVariable(T).setBounds(aClass.getSimpleName());
         return source;
     }
