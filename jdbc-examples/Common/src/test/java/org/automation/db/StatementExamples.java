@@ -1,4 +1,4 @@
-package org.automation.db.examples;
+package org.automation.db;
 
 import java.sql.Statement;
 
