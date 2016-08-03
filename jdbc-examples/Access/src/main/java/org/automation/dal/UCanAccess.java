@@ -1,6 +1,7 @@
 package org.automation.dal;
 
 import net.ucanaccess.jdbc.UcanaccessDriver;
+import org.automation.dal.encrypted.FileOpenerByCrypto;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,5 +21,9 @@ public class UCanAccess {
         DriverManager.registerDriver(new UcanaccessDriver());//this is optional
         return DriverManager.getConnection(url, user, pass);
     }
+    public static synchronized Connection getConnectionWithCrypto() throws SQLException {
 
+        url = url+";jackcessOpener="+ FileOpenerByCrypto.class.getName();
+        return DriverManager.getConnection(url, user, pass);
+    }
 }
