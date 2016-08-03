@@ -9,7 +9,7 @@ import java.sql.SQLException;
 /**
  * Created by shantonu on 8/3/16.
  */
-public class ODBCThinClient {
+public class ThinCient {
 
     public static String url= "jdbc:oracle:oci://<HOST>:<PORT>/<DB>";
     private static final String user = "user";
@@ -17,11 +17,12 @@ public class ODBCThinClient {
     private static final String className = "oracle.jdbc.driver.OracleDriver";
 
     public static synchronized Connection getConnection() throws SQLException {
-        DriverManager.registerDriver(new OracleDriver());
+        DriverManager.registerDriver();
         return DriverManager.getConnection(url, user, pass);
     }
     public static synchronized Connection getLegacyConnection() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         Class.forName(className).newInstance();
+        
         return DriverManager.getConnection(url,user,pass);
     }
 }
