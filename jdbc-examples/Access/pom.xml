@@ -11,5 +11,22 @@
 
     <artifactId>access</artifactId>
 
-
+<dependencies>
+    <dependency>
+        <groupId>net.sf.ucanaccess</groupId>
+        <artifactId>ucanaccess</artifactId>
+        <version>3.0.6</version>
+    </dependency>
+    <!--for encryption support for Access-->
+    <dependency>
+        <groupId>com.healthmarketscience.jackcess</groupId>
+        <artifactId>jackcess</artifactId>
+        <version>2.1.4</version>
+    </dependency>
+    <dependency>
+        <groupId>com.healthmarketscience.jackcess</groupId>
+        <artifactId>jackcess-encrypt</artifactId>
+        <version>2.1.1</version>
+    </dependency>
+</dependencies>
 </project>
