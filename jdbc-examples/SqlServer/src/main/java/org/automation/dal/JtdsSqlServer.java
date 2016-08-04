@@ -25,5 +25,8 @@ public class JtdsSqlServer {
         Class.forName(className).newInstance();
         return DriverManager.getConnection(url,user,pass);
     }
+    public static void main(String... args){
+
+    }
 
 }
