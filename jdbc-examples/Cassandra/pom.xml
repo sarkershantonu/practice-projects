@@ -11,5 +11,26 @@
 
     <artifactId>cassandra</artifactId>
 
+<dependencies>
+    <dependency>
+        <groupId>org.apache-extras.cassandra-jdbc</groupId>
+        <artifactId>cassandra-jdbc</artifactId>
+        <version>1.2.5</version>
+    </dependency>
 
+</dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>lib/*.jar</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
