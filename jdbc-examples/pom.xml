@@ -24,6 +24,7 @@
         <module>HSQLDB</module>
         <module>InterBase</module>
         <module>Apache Hive</module>
+        <module>Firebird</module>
     </modules>
 
     <dependencies>
