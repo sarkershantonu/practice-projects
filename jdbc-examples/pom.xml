@@ -23,6 +23,7 @@
         <module>DB2</module>
         <module>HSQLDB</module>
         <module>InterBase</module>
+        <module>Apache Hive</module>
     </modules>
 
     <dependencies>
