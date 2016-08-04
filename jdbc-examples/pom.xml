@@ -11,7 +11,7 @@
     <modules>
         <module>Sybase</module>
         <module>MySql</module>
-        <module>Jdbc-Common</module>
+        <module>Common</module>
         <module>Oracle</module>
         <module>SqlServer</module>
         <module>PostgreSQL</module>
