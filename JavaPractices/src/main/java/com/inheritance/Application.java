@@ -12,8 +12,10 @@ public class Application {
         mammals.printHabit();
         Animale dog= new Dog("Blank", "First entry dog");
         dog.printHabit();
-        Animale human= new Human("Blank", "First entry human");;
+        Animale human= new Human("Blank", "First entry human");
         human.printHabit();
+        // the upper part tests, using this. will be get on current class context not super
+
         /*
         animale = new Animale ("animale");
 
