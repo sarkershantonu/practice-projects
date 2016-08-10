@@ -25,6 +25,7 @@
         <module>InterBase</module>
         <module>Apache Hive</module>
         <module>Firebird</module>
+        <module>HikariCP</module>
     </modules>
 
     <dependencies>

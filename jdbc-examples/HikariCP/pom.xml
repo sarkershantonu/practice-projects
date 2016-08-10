@@ -9,12 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Interbase</artifactId>
+    <artifactId>HikariCP</artifactId>
 <dependencies>
     <dependency>
-        <groupId>org.firebirdsql.jdbc</groupId>
-        <artifactId>jaybird-jdk18</artifactId>
-        <version>2.2.11</version>
+        <groupId>com.zaxxer</groupId>
+        <artifactId>HikariCP</artifactId>
+        <version>2.4.7</version>
     </dependency>
 </dependencies>
 
