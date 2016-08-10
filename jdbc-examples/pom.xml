@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.automation</groupId>
-    <artifactId>jdbc-examples</artifactId>
+    <artifactId>jdbc-connection-examples</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
