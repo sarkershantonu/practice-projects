@@ -9,7 +9,8 @@ public class App {
     private static Handler handler = null;
 
     public static void main(String... args) {
-
+        filterExample();
+        /*
         ConsoleHandlerExample();
         MemoryHandlerExample();
         StreamHandlerExample();
@@ -18,7 +19,7 @@ public class App {
             FileHandlerExample();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     private static void FileHandlerExample() throws IOException {
@@ -61,7 +62,6 @@ public class App {
         defaultLogging();
     }
 
-
     private static void defaultLogging() {
         log.fine("This is fine logging using " + log.getClass());
         log.info("This is info logging using " + log.getClass());
@@ -71,5 +71,9 @@ public class App {
         log.severe("This is severe logging using " + log.getClass());
         log.warning("This is warning logging using " + log.getClass());
         System.out.println("example of " + log.getClass());
+    }
+    private static void filterExample(){
+        log.setFilter(new LogFilter("warning"));// only logs messages with warning keywords
+        defaultLogging();
     }
 }
