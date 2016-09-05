@@ -1,0 +1,1 @@
+# All logging examples in java

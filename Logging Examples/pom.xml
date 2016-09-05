@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.automation</groupId>
+	<artifactId>Logging</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<modules>
+		<module>Log4j-Slf4j</module>
+		<module>JDK Logger</module>
+		<module>Log Server</module>
+		<module>Slf4j Simple</module>
+		<module>XSLF4J</module>
+		<module>Apache Log4j</module>
+		<module>Apache Log4j2</module>
+		<module>Apache Common</module>
+		<module>Jboss Log</module>
+		<module>Logback</module>
+		<module>Tiny Log</module>
+		<module>SLF4J Tiny Log</module>
+		<module>SLF4J Logback</module>
+	</modules>
+	<packaging>pom</packaging>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.14</version>
+		</dependency>
+	</dependencies>
+</project>
