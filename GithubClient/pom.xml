@@ -50,19 +50,20 @@
             <artifactId>args4j-maven-plugin</artifactId>
             <version>2.33</version>
         </dependency>
+<!--
         <dependency>
             <groupId>org.eclipse.mylyn.github</groupId>
             <artifactId>org.eclipse.egit.github.core</artifactId>
             <version>4.5.0.201609210915-r</version>
         </dependency>
+-->
 
 
-        <!--      <dependency>
+              <dependency>
                   <groupId>org.eclipse.mylyn.github</groupId>
                   <artifactId>org.eclipse.egit.github.core</artifactId>
                   <version>2.1.5</version>
               </dependency>
-      -->
 
         <dependency>
             <groupId>org.slf4j</groupId>

@@ -58,7 +58,7 @@ public class Client {
 
         RepositoryService service = new RepositoryService(client);
         try {
-            for (Repository repo : service.getRepositories("FX")) {
+            for (Repository repo : service.getRepositories("AutomationUI")) {
                 System.out.println(repo.getName());
             }
         } catch (IOException e) {
