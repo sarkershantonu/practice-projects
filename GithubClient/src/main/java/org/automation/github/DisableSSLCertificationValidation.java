@@ -11,7 +11,8 @@ import java.security.SecureRandom;
 
 public final class DisableSSLCertificationValidation {
     private static final Logger log = LoggerFactory.getLogger(DisableSSLCertificationValidation.class);
-    public static final void apply() {
+    public static final void apply()
+    {
         TrustManager[] trustAllCerts = new TrustManager[] {
                 new X509TrustManager() {
                     public java.security.cert.X509Certificate[] getAcceptedIssuers() {
@@ -23,14 +24,13 @@ public final class DisableSSLCertificationValidation {
                 }
         };
 
-        // Install the all-trusting trust manager
         try {
             SSLContext sc = SSLContext.getInstance("SSL");
             sc.init(null, trustAllCerts, new SecureRandom());
             HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
         }
         catch (Exception e) {
-            log.error("Failed to set default SSL socket factory", e);
+            log.error("Failed to set default SSL socket", e);
         }
     }
 

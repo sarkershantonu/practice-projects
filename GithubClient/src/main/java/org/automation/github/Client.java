@@ -12,21 +12,21 @@ import java.io.IOException;
 
 
 public class Client {
-    private static final String DEFAULT_GITHUB_HOST = "github.com";//or your corporate client
+    private static final String DEFAULT_GITHUB_HOST = "www.github.com";//or your corporate client
 
     private static final int ERROR_BAD_OPTIONS = -1;
     private static final int ERROR_IO_EXCEPTION = -2;
 
-    @Option(name = "--hostname", metaVar = "<github_hostname>", usage = "The GitHub host to connect to\nDefaults to " + DEFAULT_GITHUB_HOST)
+    @Option(name = "--host", metaVar = "<github_hostname>", usage = "The GitHub host to connect to\nDefaults to " + DEFAULT_GITHUB_HOST)
     private String hostname = DEFAULT_GITHUB_HOST;
 
-    @Option(name = "--username", metaVar = "<username>", usage = "GitHub user account name")
+    @Option(name = "--user", metaVar = "<username>", usage = "GitHub username")
     private String username;
 
-    @Option(name = "--password", metaVar = "<password>", usage = "Password for the GitHub account")
+    @Option(name = "--pass", metaVar = "<password>", usage = "GitHub Password")
     private String password;
 
-    @Option(name = "--help", aliases = {"-h"}, handler = BooleanOptionHandler.class, usage = "Show this help text")
+    @Option(name = "--help", aliases = {"-h"}, handler = BooleanOptionHandler.class, usage = "help")
     private boolean showUsage = false;
 
     public void run(String[] args) {
@@ -49,10 +49,10 @@ public class Client {
 
 
         if (username == null) {
-            username = UserInput.getStringOption("username");
+            username = UserInput.getStringOption("user");
         }
         if (password == null) {
-            password = UserInput.getStringOption("password");
+            password = UserInput.getStringOption("pass");
         }
         client.setCredentials(username, password);
 
@@ -70,7 +70,7 @@ public class Client {
 
 
     private void usageExit() {
-        System.err.println("Connect to a GitHub server and show repositories");
+        System.err.println("ERROR : Connecting to a GitHub server and show repositories");
         new CmdLineParser(this).printUsage(System.err);
         System.exit(ERROR_BAD_OPTIONS);
     }
