@@ -43,7 +43,7 @@ public class MyClient {
             usageExit();
         }
 
-        DisableSSLCertificationValidation.apply();
+        SSLManager.disableSSLValidation();
 
         GitHubClient client = new GitHubClient(hostname);
 
@@ -63,7 +63,7 @@ public class MyClient {
             }
         } catch (IOException e) {
             e.printStackTrace();
-            System.exit(ERROR_IO_EXCEPTION);
+            exit();
         }
 
     }
@@ -72,8 +72,11 @@ public class MyClient {
     private void usageExit() {
         System.err.println("ERROR : Connecting to a GitHub server and show repositories");
         new CmdLineParser(this).printUsage(System.err);
-        System.exit(ERROR_BAD_OPTIONS);
+       exit();
     }
 
+    private static void exit(){
+        System.exit(ERROR_BAD_OPTIONS);
+    }
 
 }

@@ -7,10 +7,10 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 import java.security.SecureRandom;
 
-public final class DisableSSLCertificationValidation {
+public final class SSLManager {
 
 
-    public static final void apply() {
+    public static final void disableSSLValidation() {
         TrustManager[] trustAllCerts = new TrustManager[]{
                 new X509TrustManager() {
                     public java.security.cert.X509Certificate[] getAcceptedIssuers() {
