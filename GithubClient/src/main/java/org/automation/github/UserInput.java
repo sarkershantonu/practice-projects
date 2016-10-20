@@ -1,8 +1,5 @@
 package org.automation.github;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.swing.*;
 import java.awt.*;
 import java.io.BufferedReader;
@@ -11,12 +8,12 @@ import java.io.InputStreamReader;
 
 
 public final class UserInput {
-    private static final Logger log = LoggerFactory.getLogger(UserInput.class);
+
     static {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
-            log.error("Failed to set Look and Feel to system look and feel", e);
+
         }
     }
 
@@ -30,7 +27,6 @@ public final class UserInput {
                 result = new BufferedReader(new InputStreamReader(System.in)).readLine();
             } catch (IOException e) {
                 e.printStackTrace();
-                log.error("Error reading user input [" + optionName + "]", e);
                 throw new RuntimeException(e);
             }
         } else {

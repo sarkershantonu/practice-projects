@@ -11,7 +11,7 @@ import org.kohsuke.args4j.spi.BooleanOptionHandler;
 import java.io.IOException;
 
 
-public class Client {
+public class MyClient {
     private static final String DEFAULT_GITHUB_HOST = "www.github.com";//or your corporate client
 
     private static final int ERROR_BAD_OPTIONS = -1;

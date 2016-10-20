@@ -5,7 +5,7 @@ package org.automation.github;
  */
 public class Application {
     public static void main(String[] args) {
-        final Client client = new Client();
-        client.run(args);
+        final MyClient myClient = new MyClient();
+        myClient.run(args);
     }
 }
