@@ -1,5 +1,10 @@
 package org.automation.github;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonParseException;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonReader;
+
 import org.eclipse.egit.github.core.Repository;
 import org.eclipse.egit.github.core.client.GitHubClient;
 import org.eclipse.egit.github.core.service.RepositoryService;
@@ -46,7 +51,6 @@ public class MyClient {
         SSLManager.disableSSLValidation();
 
         GitHubClient client = new GitHubClient(hostname);
-
 
         if (username == null) {
             username = UserInput.getStringOption("user");

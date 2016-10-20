@@ -8,8 +8,6 @@ import javax.net.ssl.X509TrustManager;
 import java.security.SecureRandom;
 
 public final class SSLManager {
-
-
     public static final void disableSSLValidation() {
         TrustManager[] trustAllCerts = new TrustManager[]{
                 new X509TrustManager() {
