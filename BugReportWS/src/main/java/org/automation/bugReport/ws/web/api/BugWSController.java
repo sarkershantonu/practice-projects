@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import org.automation.bugReport.ws.models.Bug;
 import org.automation.bugReport.ws.services.BugService;
+import org.automation.bugReport.ws.web.core.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

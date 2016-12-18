@@ -1,4 +1,4 @@
-package org.automation.bugReport.ws.web.api;
+package org.automation.bugReport.ws.web.core;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
