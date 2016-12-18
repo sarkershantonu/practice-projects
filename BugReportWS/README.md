@@ -15,3 +15,16 @@ if you do not use Spring Boot Parent POM, you need to include this in your build
         <filtering>true</filtering>
     </resource>
 </resources>
+
+And this part for pluigns configuration 
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-resources-plugin</artifactId>
+    <version>your desire version</version>
+    <configuration>
+        <delimiters>
+            <delimiter>@</delimiter>
+        </delimiters>
+        <useDefaultDelimiters>false</useDefaultDelimiters>
+    </configuration>
+</plugin>
