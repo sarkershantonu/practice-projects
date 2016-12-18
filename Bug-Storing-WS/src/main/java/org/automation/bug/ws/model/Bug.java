@@ -15,6 +15,9 @@ public class Bug {
     @GeneratedValue
     private Long id;
 
+    private String title;
+    private String description;
+
     public Long getId() {
         return id;
     }
@@ -27,7 +30,7 @@ public class Bug {
         return description;
     }
 
-    private String title;
-    private String description;
+    public Bug() {
+    }
 
 }
