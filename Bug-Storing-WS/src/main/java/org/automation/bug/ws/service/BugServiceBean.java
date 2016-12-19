@@ -40,9 +40,7 @@ public class BugServiceBean implements BugService{
     @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
     @CachePut(value = "bugs", key = "#g.id")
     public Bug create(Bug g) {
-        if(g.getId()==null){
-            throw new EntityExistsException("ID is NULL");
-        }
+
         return bugs.save(g);
     }
 

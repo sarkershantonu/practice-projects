@@ -24,27 +24,13 @@ public class Bug {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+     private String text;
+
+    public String getText() {
+        return text;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setText(String text) {
+        this.text = text;
     }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-
-
-    private String title;
-    private String description;
-
-
-
 }
