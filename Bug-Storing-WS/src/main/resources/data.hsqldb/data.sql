@@ -1,3 +1,6 @@
 
-INSERT INTO Bugs (text, description) VALUES ('First Bug'), ('Description of first bug ');
-INSERT INTO Bugs (text, description) VALUES ('আমার প্রথম মেসেজ'), ('Description of Bangla bug ');
+INSERT INTO Bugs (title, description)
+VALUES ('First Bug'), ('Description of first bug ');
+
+INSERT INTO Bugs (title, description)
+VALUES ('Second bug'), ('Description of Bangla bug ');

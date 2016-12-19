@@ -1,6 +1,8 @@
 package org.automation.bug.ws.controller;
 
 import org.automation.bug.ws.controller.core.BaseController;
+import org.automation.bug.ws.service.BugService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -8,4 +10,8 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class BugController extends BaseController {
+    @Autowired
+    private BugService bugService;
+
+
 }
