@@ -16,26 +16,31 @@ public class App {
         System.out.println("ROUND_FLOOR @1 : "+num1.divide(num2, 1, BigDecimal.ROUND_FLOOR));
         System.out.println("ROUND_DOWN @1 : "+num1.divide(num2, 1, BigDecimal.ROUND_DOWN));
         System.out.println("ROUND_HALF_DOWN @1 : "+num1.divide(num2, 1, BigDecimal.ROUND_HALF_DOWN));
+        System.out.println("ROUND_HALF_EVEN @1 : "+num1.divide(num2, 1, BigDecimal.ROUND_HALF_EVEN));
 
         System.out.println("ROUND_CEILING @2 : "+num1.divide(num2, 2, BigDecimal.ROUND_CEILING));
         System.out.println("ROUND_FLOOR @2 : "+num1.divide(num2, 2, BigDecimal.ROUND_FLOOR));
         System.out.println("ROUND_DOWN @2 : "+num1.divide(num2, 2, BigDecimal.ROUND_DOWN));
         System.out.println("ROUND_HALF_DOWN @2 : "+num1.divide(num2, 2, BigDecimal.ROUND_HALF_DOWN));
+        System.out.println("ROUND_HALF_EVEN @2 : "+num1.divide(num2, 2, BigDecimal.ROUND_HALF_EVEN));
 
         System.out.println("ROUND_CEILING @3 : "+num1.divide(num2, 3, BigDecimal.ROUND_CEILING));
         System.out.println("ROUND_FLOOR @3 : "+num1.divide(num2, 3, BigDecimal.ROUND_FLOOR));
         System.out.println("ROUND_DOWN @3 : "+num1.divide(num2, 3, BigDecimal.ROUND_DOWN));
         System.out.println("ROUND_HALF_DOWN @3 : "+num1.divide(num2, 3, BigDecimal.ROUND_HALF_DOWN));
+        System.out.println("ROUND_HALF_EVEN @3 : "+num1.divide(num2, 3, BigDecimal.ROUND_HALF_EVEN));
 
         System.out.println("ROUND_CEILING @4 : "+num1.divide(num2, 4, BigDecimal.ROUND_CEILING));
         System.out.println("ROUND_FLOOR @4 : "+num1.divide(num2, 4, BigDecimal.ROUND_FLOOR));
         System.out.println("ROUND_DOWN @4 : "+num1.divide(num2, 4, BigDecimal.ROUND_DOWN));
         System.out.println("ROUND_HALF_DOWN @4 : "+num1.divide(num2, 4, BigDecimal.ROUND_HALF_DOWN));
+        System.out.println("ROUND_HALF_EVEN @4 : "+num1.divide(num2, 4, BigDecimal.ROUND_HALF_EVEN));
 
         System.out.println("ROUND_CEILING @5 : "+num1.divide(num2, 5, BigDecimal.ROUND_CEILING));
         System.out.println("ROUND_FLOOR @5 : "+num1.divide(num2, 5, BigDecimal.ROUND_FLOOR));
         System.out.println("ROUND_DOWN @5 : "+num1.divide(num2, 5, BigDecimal.ROUND_DOWN));
         System.out.println("ROUND_HALF_DOWN @5 : "+num1.divide(num2, 5, BigDecimal.ROUND_HALF_DOWN));
+        System.out.println("ROUND_HALF_EVEN @5 : "+num1.divide(num2, 5, BigDecimal.ROUND_HALF_EVEN));
 
     }
 }
