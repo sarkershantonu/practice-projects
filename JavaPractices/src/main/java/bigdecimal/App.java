@@ -17,6 +17,7 @@ public class App {
         System.out.println("ROUND_DOWN @1 : "+num1.divide(num2, 1, BigDecimal.ROUND_DOWN));
         System.out.println("ROUND_HALF_DOWN @1 : "+num1.divide(num2, 1, BigDecimal.ROUND_HALF_DOWN));
         System.out.println("ROUND_HALF_EVEN @1 : "+num1.divide(num2, 1, BigDecimal.ROUND_HALF_EVEN));
+        System.out.println("ROUND_HALF_UP @1 : "+num1.divide(num2, 1, BigDecimal.ROUND_HALF_UP));
 
         System.out.println("ROUND_CEILING @2 : "+num1.divide(num2, 2, BigDecimal.ROUND_CEILING));
         System.out.println("ROUND_FLOOR @2 : "+num1.divide(num2, 2, BigDecimal.ROUND_FLOOR));
