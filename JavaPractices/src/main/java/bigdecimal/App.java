@@ -13,7 +13,7 @@ public class App {
 
         System.out.println("No Rounding : "+num1.divide(num2));
 
-        for(int i=1; i<=6;i++){
+        for(int i=1; i<=8;i++){
             System.out.println("ROUND_CEILING @"+i+" : "+num1.divide(num2, i, BigDecimal.ROUND_CEILING));
             System.out.println("ROUND_FLOOR  @"+i+" : "+num1.divide(num2,i, BigDecimal.ROUND_FLOOR));
             System.out.println("ROUND_DOWN  @"+i+" : "+num1.divide(num2, i, BigDecimal.ROUND_DOWN));
@@ -25,7 +25,7 @@ public class App {
             System.out.println("COMPLETE for Selling "+i);
         }
         /**
-         * output :
+         * output : for only 6th
          * No Rounding : 12.3456789
          ROUND_CEILING @1 : 12.4
          ROUND_FLOOR  @1 : 12.3
