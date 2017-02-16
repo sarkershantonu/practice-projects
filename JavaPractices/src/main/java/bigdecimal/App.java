@@ -9,6 +9,9 @@ public class App {
     public static void main(String[] args) {
 
         BigDecimal num1 = new BigDecimal(1234567);
+        BigDecimal num2 = new BigDecimal(100000);
+
+        System.out.println("Plain : "+num1.divide(num2));
 
     }
 }
