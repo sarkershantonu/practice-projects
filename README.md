@@ -10,5 +10,6 @@ Language
 
 
 # Target 
+- Daily practices
 
 For individual project, see respectiva readme
