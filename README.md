@@ -11,5 +11,6 @@ Language
 
 # Target 
 - Daily practices
+- Interview Specific solve
 
 For individual project, see respectiva readme
