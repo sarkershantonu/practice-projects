@@ -11,7 +11,7 @@ import java.sql.SQLException;
  */
 public class ThinCient {
 
-    public static String url= "jdbc:oracle:thin:@<server>:<port>:<db>";
+    public static String url= "jdbc:oracle:thin:@<server>:<port>/<db>";
     private static final String user = "user";
     private static final String pass = "pass";
 
