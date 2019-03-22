@@ -8,9 +8,3 @@ Language
 3. Python
 4. C/C++
 
-
-# Target 
-- Daily practices
-- Interview Specific solve
-
-For individual project, see respectiva readme
