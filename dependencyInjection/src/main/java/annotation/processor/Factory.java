@@ -9,9 +9,7 @@ import java.util.Objects;
  * Created by shantonu on 6/19/16.
  */
 public class Factory {
-    private static Map<Class<?>, Object> objects = new HashMap() {
-    };
-
+    private static Map<Class<?>, Object> objects = new HashMap() ;
     public static Object getObject(Class<?> aClass){
         return objects.get(aClass);
     }
