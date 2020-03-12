@@ -1,2 +1,2 @@
-#Java Generics 
+# Java Generics 
 examples  for blog
